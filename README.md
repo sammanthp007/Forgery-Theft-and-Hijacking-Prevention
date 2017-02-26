@@ -22,9 +22,9 @@ The following **required** functionality is completed:
 
 4\. [ ]  Required: Require login to access staff area pages.
   * [ ]  Required: Add a login requirement to *almost all* staff area pages.
-  * [ ]  Required: Write code for `last_login_is_recent()`.
+  * [x]  Required: Write code for `last_login_is_recent()`.
 
-5\. [ ]  Required: Complete Logout page.
+5\. [x]  Required: Complete Logout page.
   * [x]  Required: Add code to destroy the user's session file after logging out.
 
 6\. [ ]  Required: Add CSRF protections to the state forms.
@@ -56,7 +56,7 @@ The following advanced user stories are optional:
 
 * [ ]  Bonus Objective 3: CSRF tokens only valid for 10 minutes.
 
-* [ ]  Bonus Objective 4: Sessions are valid only if user-agent string matches previous value.
+* [x]  Bonus Objective 4: Sessions are valid only if user-agent string matches previous value.
 
 * [ ]  Advanced Objective: Set/Get Signed-Encrypted Cookie
   * [ ]  Create "public/set\_secret\_cookie.php".

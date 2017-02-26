@@ -16,6 +16,7 @@ function after_successful_login() {
     session_regenerate_id();
     $_SESSION['logged_in'] = true;
     $_SESSION['last_login'] = time();
+    $_SESSION['user_agent'] = $_SERVER['HTTP_USER_AGENT'];
 }
 
 // A one-step function to destroy the current session
@@ -44,8 +45,10 @@ function last_login_is_recent() {
 // Checks to see if the user-agent string of the current request
 // matches the user-agent string used when the user last logged in.
 function user_agent_matches_session() {
-    // TODO add code to determine if user agent matches session
-    return true;
+    // DONE add code to determine if user agent matches session
+    if (!isset($_SESSION['user_agent'])) { return false; }
+    if (!isset($_SERVER['HTTP_USER_AGENT'])) { return false; }
+    return ($_SESSION['user-_agent'] === $_SERVER['HTTP_USER_AGENT']);
 }
 
 // Inspects the session to see if it should be considered valid.
