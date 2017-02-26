@@ -8,7 +8,7 @@ ob_start();
 // DONE add configurations
 session_start([
     'use_only_cookies' => 1,
-    'cookie_lifetime_integer' => 86400,
+    'cookie_lifetime' => 86400,
     'cookie_httponly' => 1
 ]);
 

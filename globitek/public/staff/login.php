@@ -36,14 +36,15 @@ if(is_post_request()) {
         // Username found, password matches
         log_in_user($user);
         // Redirect to the staff menu after login
+        after_successful_login();
         redirect_to('index.php');
       } else {
         // Username found, but password does not match.
-        $errors[] = "Username of password is invalid"; // DONE write an error message
+        $errors[] = "Username or password is invalid"; // DONE write an error message
       }
     } else {
       // No username found
-      $errors[] = "Username of password is invalid"; // DONE write an error message
+      $errors[] = "Username or password is invalid"; // DONE write an error message
     }
   }
 }
