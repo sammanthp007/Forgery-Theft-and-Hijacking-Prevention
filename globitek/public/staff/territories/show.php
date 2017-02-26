@@ -5,10 +5,11 @@ require_login();
 ?>
 
 <?php
-if(!isset($_GET['id'])) {
+$id = urlencode($_GET['id']);
+if (!isset($id)) {
   redirect_to('../index.php');
 }
-$id = $_GET['id'];
+$id = urlencode($_GET['id']);
 $territory_result = find_territory_by_id($id);
 // No loop, only one result
 $territory = db_fetch_assoc($territory_result);

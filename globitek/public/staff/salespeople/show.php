@@ -3,10 +3,10 @@ require_once('../../../private/initialize.php');
 require_login();
 
 
-if(!isset($_GET['id'])) {
+$id = urlencode($_GET['id']);
+if (!isset($id)) {
   redirect_to('index.php');
 }
-$id = $_GET['id'];
 $salespeople_result = find_salesperson_by_id($id);
 // No loop, only one result
 $salesperson = db_fetch_assoc($salespeople_result);

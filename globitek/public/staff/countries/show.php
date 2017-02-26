@@ -4,10 +4,10 @@ require_login();
 ?>
 
 <?php
-if(!isset($_GET['id'])) {
+$id = urlencode($_GET['id']);
+if(!isset($id)) {
   redirect_to('index.php');
 }
-$id = $_GET['id'];
 $country_result = find_country_by_id($id);
 // No loop, only one result
 $country = db_fetch_assoc($country_result);

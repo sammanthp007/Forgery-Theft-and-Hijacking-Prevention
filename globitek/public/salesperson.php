@@ -1,13 +1,13 @@
 <?php
   require_once('../private/initialize.php');
 
-  if(!isset($_GET['id'])) {
+  $id = urlencode($_GET['id']);
+if (!isset($id)) {
     // Redirect if no ID provided
     redirect_to('territories.php');
   }
 
   // Find salesperson using id in query string
-  $id = $_GET['id'];
   $salespeople_result = find_salesperson_by_id($id);
 
   $row_count = db_num_rows($salespeople_result);

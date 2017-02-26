@@ -14,8 +14,8 @@ $password = '';
 if(is_post_request()) {
 
   // Confirm that values are present before accessing them.
-  if(isset($_POST['username'])) { $username = $_POST['username']; }
-  if(isset($_POST['password'])) { $password = $_POST['password']; }
+  if(isset($_POST['username'])) { $username = urlencode($_POST['username']); }
+  if(isset($_POST['password'])) { $password = urlencode($_POST['password']); }
 
   // Validations
   if (is_blank($username)) {

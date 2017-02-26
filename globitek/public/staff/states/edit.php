@@ -2,10 +2,11 @@
 require_once('../../../private/initialize.php');
 require_login();
 
-if(!isset($_GET['id'])) {
+$id = urlencode($_GET['id']);
+if (!isset($id)) {
     redirect_to('../index.php');
 }
-$states_result = find_state_by_id($_GET['id']);
+$states_result = find_state_by_id($id);
 // No loop, only one result
 $state = db_fetch_assoc($states_result);
 

@@ -3,7 +3,8 @@ require_once('../../../private/initialize.php');
 require_login();
 
 
-if(!isset($_GET['id'])) {
+$id = urlencode($_GET['id']);
+if (!isset($id)) {
   redirect_to('../index.php');
 }
 
@@ -12,7 +13,7 @@ $errors = array();
 $territory = array(
   'name' => '',
   'position' => '',
-  'state_id' => $_GET['id']
+  'state_id' => $id
 );
 
 if(is_post_request()) {
