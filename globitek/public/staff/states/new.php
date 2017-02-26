@@ -3,30 +3,36 @@ require_once('../../../private/initialize.php');
 require_login();
 
 if(!isset($_GET['id'])) {
-  redirect_to('../index.php');
+    redirect_to('../index.php');
 }
 
 // Set default values for all variables the page needs.
 $errors = array();
 $state = array(
-  'name' => '',
-  'code' => '',
-  'country_id' => $_GET['id']
+    'name' => '',
+    'code' => '',
+    'country_id' => $_GET['id']
 );
 
 if(is_post_request()) {
+    if (csrf_token_is_valid()) {
+        if ((request_is_from_same_domain) && csrf_token_is_recent()) {
 
-  // Confirm that values are present before accessing them.
-  if(isset($_POST['name'])) { $state['name'] = $_POST['name']; }
-  if(isset($_POST['code'])) { $state['code'] = $_POST['code']; }
+            // Confirm that values are present before accessing them.
+            if(isset($_POST['name'])) { $state['name'] = $_POST['name']; }
+            if(isset($_POST['code'])) { $state['code'] = $_POST['code']; }
 
-  $result = insert_state($state);
-  if($result === true) {
-    $new_id = db_insert_id($db);
-    redirect_to('show.php?id=' . $new_id);
-  } else {
-    $errors = $result;
-  }
+            $result = insert_state($state);
+            if($result === true) {
+                $new_id = db_insert_id($db);
+                redirect_to('show.php?id=' . $new_id);
+            } else {
+                $errors = $result;
+            }
+        }
+    } else {
+        echo "You are being attacked though XSRF";
+    }
 }
 ?>
 <?php $page_title = 'Staff: New State'; ?>
@@ -45,6 +51,7 @@ if(is_post_request()) {
     Code:<br />
     <input type="text" name="code" value="<?php echo h($state['code']); ?>" /><br />
     <br />
+    <?php echo csrf_token_tag(); ?>
     <input type="submit" name="submit" value="Create"  />
   </form>
 

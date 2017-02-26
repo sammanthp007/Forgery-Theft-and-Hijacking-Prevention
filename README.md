@@ -20,24 +20,24 @@ The following **required** functionality is completed:
   * [x]  Required: After login, store user last login time in session data.
   * [x]  Required: Regenerate the session ID at the appropriate point.
 
-4\. [ ]  Required: Require login to access staff area pages.
-  * [ ]  Required: Add a login requirement to *almost all* staff area pages.
+4\. [x]  Required: Require login to access staff area pages.
+  * [x]  Required: Add a login requirement to *almost all* staff area pages.
   * [x]  Required: Write code for `last_login_is_recent()`.
 
 5\. [x]  Required: Complete Logout page.
   * [x]  Required: Add code to destroy the user's session file after logging out.
 
-6\. [ ]  Required: Add CSRF protections to the state forms.
-  * [ ]  Required: Create a CSRF token.
-  * [ ]  Required: Add CSRF tokens to forms.
-  * [ ]  Required: Compare tokens against the stored version of the token.
-  * [ ]  Required: Only process forms data sent by POST requests.
-  * [ ]  Required: Confirm request referer is from the same domain as the host.
-  * [ ]  Required: Store the CSRF token in the user's session.
-  * [ ]  Required: Add the same CSRF token to the login form as a hidden input.
-  * [ ]  Required: When submitted, confirm that session and form tokens match.
-  * [ ]  Required: If tokens do not match, show an error message.
-  * [ ]  Required: Make sure that a logged-in user can use pages as expected.
+6\. [x]  Required: Add CSRF protections to the state forms.
+  * [x]  Required: Create a CSRF token.
+  * [x]  Required: Add CSRF tokens to forms.
+  * [x]  Required: Compare tokens against the stored version of the token.
+  * [x]  Required: Only process forms data sent by POST requests.
+  * [x]  Required: Confirm request referer is from the same domain as the host.
+  * [x]  Required: Store the CSRF token in the user's session.
+  * [x]  Required: Add the same CSRF token to the login form as a hidden input.
+  * [x]  Required: When submitted, confirm that session and form tokens match.
+  * [x]  Required: If tokens do not match, show an error message.
+  * [x]  Required: Make sure that a logged-in user can use pages as expected.
 
 7\. [ ]  Required: Ensure the application is not vulnerable to XSS attacks.
 
@@ -54,7 +54,7 @@ The following advanced user stories are optional:
 
 * [ ] Bonus Objective 2: Add CSRF protections to all forms in the staff directory
 
-* [ ]  Bonus Objective 3: CSRF tokens only valid for 10 minutes.
+* [x]  Bonus Objective 3: CSRF tokens only valid for 10 minutes.
 
 * [x]  Bonus Objective 4: Sessions are valid only if user-agent string matches previous value.
 
