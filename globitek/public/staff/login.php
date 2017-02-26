@@ -39,11 +39,11 @@ if(is_post_request()) {
         redirect_to('index.php');
       } else {
         // Username found, but password does not match.
-        $errors[] = ""; // TODO write an error message
+        $errors[] = "Username of password is invalid"; // DONE write an error message
       }
     } else {
       // No username found
-      $errors[] = ""; // TODO write an error message
+      $errors[] = "Username of password is invalid"; // DONE write an error message
     }
   }
 }
